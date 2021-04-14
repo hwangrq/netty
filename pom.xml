@@ -115,8 +115,8 @@
         <!-- 1.4.x does not work in Java10+ -->
         <jboss.marshalling.version>2.0.5.Final</jboss.marshalling.version>
         <!-- This is the minimum supported by Java12+ -->
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <!-- pax-exam does not work on latest Java12 EA 22 build -->
         <skipOsgiTestsuite>true</skipOsgiTestsuite>
       </properties>
@@ -297,32 +297,32 @@
         <argLine.noUnsafe>-Dio.netty.noUnsafe=true</argLine.noUnsafe>
       </properties>
     </profile>
-    <profile>
-      <id>coverage</id>
-      <properties>
-        <argLine.coverage>${jacoco.argLine}</argLine.coverage>
-      </properties>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.7.7.201606060606</version>
-            <executions>
-              <execution>
-                <id>jacoco-prepare-agent</id>
-                <goals>
-                  <goal>prepare-agent</goal>
-                </goals>
-                <configuration>
-                  <propertyName>jacoco.argLine</propertyName>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
+<!--    <profile>-->
+<!--      <id>coverage</id>-->
+<!--      <properties>-->
+<!--        <argLine.coverage>${jacoco.argLine}</argLine.coverage>-->
+<!--      </properties>-->
+<!--      <build>-->
+<!--        <plugins>-->
+<!--          <plugin>-->
+<!--            <groupId>org.jacoco</groupId>-->
+<!--            <artifactId>jacoco-maven-plugin</artifactId>-->
+<!--            <version>0.7.7.201606060606</version>-->
+<!--            <executions>-->
+<!--              <execution>-->
+<!--                <id>jacoco-prepare-agent</id>-->
+<!--                <goals>-->
+<!--                  <goal>prepare-agent</goal>-->
+<!--                </goals>-->
+<!--                <configuration>-->
+<!--                  <propertyName>jacoco.argLine</propertyName>-->
+<!--                </configuration>-->
+<!--              </execution>-->
+<!--            </executions>-->
+<!--          </plugin>-->
+<!--        </plugins>-->
+<!--      </build>-->
+<!--    </profile>-->
     <profile>
       <id>jdk8</id>
       <activation>
@@ -353,8 +353,8 @@
   </profiles>
 
   <properties>
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <netty.dev.tools.directory>${project.build.directory}/dev-tools</netty.dev.tools.directory>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
